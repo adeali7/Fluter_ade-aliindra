@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:toykid/views/splash_screen/splash_screen.dart';
+import 'package:toykid/Screens/home/home_screen.dart';
+import 'package:toykid/Screens/splash_screen/splash_screen.dart';
 import 'consts/consts.dart';
 void main() {
   runApp(const MyApp());
@@ -16,11 +16,15 @@ class MyApp extends StatelessWidget {
       title: 'Toy Kid',
       theme: ThemeData(
         
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        canvasColor: greenColor,
         fontFamily: regular,
       ),
-      home: const SplashScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(), 
+        '/home': (context) => const HomeScreen(), 
+
+      },
     );
   }
 }

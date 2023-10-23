@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:toykid/Screens/home/home_screen.dart';
 import 'package:toykid/consts/consts.dart';
 import 'package:toykid/widget_common/applogo_widget.dart';
 
 class SplashScreen extends StatefulWidget {
+  static const String routeName = '/splash';
+
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
@@ -11,6 +13,15 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+
+    super.initState();
+    Future.delayed(Duration(seconds:2), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) =>const HomeScreen()),
+        );
+    });
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: greenColor,
