@@ -1,8 +1,9 @@
 import 'package:toykid/Screens/home/components/banner_discount.dart';
 import 'package:toykid/Screens/home/components/categories.dart';
 import 'package:toykid/Screens/home/components/home_header.dart';
-import 'package:toykid/Screens/home/components/section_title.dart';
 import 'package:toykid/consts/consts.dart';
+import 'package:toykid/screens/home/components/section_title.dart';
+import 'package:toykid/screens/home/components/special_offers.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -18,128 +19,18 @@ class Body extends StatelessWidget {
             children: [
               SizedBox(height: 5),
               HomeHeader(),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               DiscountBanner(),
-              SizedBox(height: 10),
+              SizedBox(height: 30),
               Categories(),
-              SizedBox(height: 10),
-              specialoffers()
+              SizedBox(height: 30),
+              SpecialOffers(),
+              SizedBox(height: 30),
+              SectionTitle(
+                text: "Popular Product",
+                 press: () {},
+                 )
               
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class specialoffers extends StatelessWidget {
-  const specialoffers({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SectionTitle(
-      text: "Special for you",
-      press: () {},
-    ),
-    SizedBox(height: 20,
-    ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              SpecialOffer(
-                image: banner,
-                title: "Special Offres",
-                brand: "Doll",
-                press: () {},
-              ),
-              SpecialOffer(
-                image: banner,
-                title: "Special Offres",
-                brand: "Car Fans",
-                press: () {},
-              ),
-              SpecialOffer(
-                image: banner,
-                title: "Special Offres",
-                brand: "Puzzle",
-                press: () {},
-              ),
-              SizedBox(width:20 ,)
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class SpecialOffer extends StatelessWidget {
-  const SpecialOffer({
-    super.key,
-    required this.title, 
-    required this.image, 
-    required this.brand, 
-    required this.press,
-  });
-
-  final String title, image;
-  final String brand;
-  final GestureTapCallback press;
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 20),
-      child: SizedBox(
-        width: 200,
-        height: 100,
-        child:  ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Row(
-            children: [
-              Stack(
-                children: [
-                  Image.asset(image,
-                  fit: BoxFit.cover,
-                   ),
-                   Image.asset(banner, fit: BoxFit.cover,),
-                   Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter ,
-                        colors: [
-                          Color(0xFF343434).withOpacity(0.6),
-                          Color(0xFF343434).withOpacity(0.10),
-                        ],
-                        )
-                    ),
-                   ),
-                   Padding(
-                     padding: EdgeInsets.symmetric(horizontal: 15, vertical:10 ),
-                     child: Text.rich(
-                      TextSpan(
-                        style: TextStyle(color: Colors.black),
-                        children: [TextSpan(text:"$title\n",
-                        style: TextStyle(fontSize:15,
-                        fontWeight: FontWeight.bold, 
-                         ),
-                         ),
-                         TextSpan(text: "$brand "),
-                         ],
-                   
-                     ),
-                     ),
-                   )
-                ],
-              ),
             ],
           ),
         ),

@@ -23,19 +23,19 @@ class SpecialOffers extends StatelessWidget {
             children: [
               SpecialOffer(
                 image: banner,
-                title: "Special Offres",
+                title: "Special Offers",
                 brand: "Doll",
                 press: () {},
               ),
               SpecialOffer(
                 image: banner,
-                title: "Special Offres",
+                title: "Special Offers",
                 brand: "Car Fans",
                 press: () {},
               ),
               SpecialOffer(
                 image: banner,
-                title: "Special Offres",
+                title: "Special Offers",
                 brand: "Puzzle",
                 press: () {},
               ),
@@ -116,4 +116,3 @@ class SpecialOffer extends StatelessWidget {
     );
   }
 }
-
