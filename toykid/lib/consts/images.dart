@@ -8,3 +8,5 @@ const String rccar = "assets/images/remote_carfans/rccar.jpeg";
 const String banner_1 = "assets/images/banner_1.png";
 const String banner_2 = "assets/images/banner_2.png";
 const String logohome = "assets/images/logohome.png";
+const String banner = "assets/images/banner.png";
+const String banner_0= "assets/images/banner0.png";
