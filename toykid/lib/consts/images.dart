@@ -10,3 +10,7 @@ const String banner_2 = "assets/images/banner_2.png";
 const String logohome = "assets/images/logohome.png";
 const String banner = "assets/images/banner.png";
 const String banner_0= "assets/images/banner0.png";
+const String banner_= "assets/images/banner_truck.png";
+const String banner_3= "assets/images/banner_doll.png";
+const String banner_4= "assets/images/1.png";
+const String banner_5= "assets/images/2.png";
