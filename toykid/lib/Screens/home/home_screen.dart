@@ -6,6 +6,7 @@ import 'package:toykid/consts/consts.dart';
 
 
 class HomeScreen extends StatefulWidget {
+  static const String routeName = '/home';
    
   const HomeScreen
 ({Key? key}) : super(key: key);

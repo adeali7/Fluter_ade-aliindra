@@ -1,5 +1,6 @@
 import 'package:toykid/Screens/home/home_screen.dart';
 import 'package:toykid/Screens/splash_screen/splash_screen.dart';
+import 'package:toykid/screens/details/details_screen.dart';
 import 'consts/consts.dart';
 void main() {
   runApp(const MyApp());
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(), 
         '/home': (context) => const HomeScreen(), 
+        '/detail' : (context) => const DetailsScreen(),
 
       },
     );
