@@ -15,7 +15,7 @@ class SectionTitle extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [Text("Special for you",
+        children: [Text( text,
         style: TextStyle(
           fontSize: 18,
           color: Colors.black,

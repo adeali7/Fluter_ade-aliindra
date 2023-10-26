@@ -2,8 +2,10 @@ import 'package:toykid/Screens/home/components/banner_discount.dart';
 import 'package:toykid/Screens/home/components/categories.dart';
 import 'package:toykid/Screens/home/components/home_header.dart';
 import 'package:toykid/consts/consts.dart';
-import 'package:toykid/screens/home/components/section_title.dart';
+import 'package:toykid/screens/home/components/popular_products.dart';
 import 'package:toykid/screens/home/components/special_offers.dart';
+
+
 
 class Body extends StatelessWidget {
   @override
@@ -26,10 +28,8 @@ class Body extends StatelessWidget {
               SizedBox(height: 30),
               SpecialOffers(),
               SizedBox(height: 30),
-              SectionTitle(
-                text: "Popular Product",
-                 press: () {},
-                 )
+              PopularProducts(),
+                
               
             ],
           ),
