@@ -31,7 +31,7 @@ class PopularProducts extends StatelessWidget {
                           context,
                           '/detail',
                           arguments: ProductDetailsArguments(
-                            product: demoProducts[index]), // Kirim produk sebagai argumen ke DetailsScreen
+                            product : demoProducts[index]), // Kirim produk sebagai argumen ke DetailsScreen
                         );
                       },
                     );
@@ -47,4 +47,10 @@ class PopularProducts extends StatelessWidget {
       ],
     );
   }
+}
+
+class ProductDetailsArguments {
+  final Product product;
+
+  ProductDetailsArguments({required this.product});
 }
