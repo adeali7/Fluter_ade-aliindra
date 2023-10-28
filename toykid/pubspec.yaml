@@ -72,6 +72,8 @@ flutter:
     - assets/images/doll/
     - assets/images/educational/
     - assets/images/remote_carfans/
+    - assets/icons/
+    - assets/icons/star.png
     - assets/icons/categories/
     - assets/icons/categories/car.png
     - assets/icons/categories/doll.png

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toykid/Screens/home/components/cart.dart';
+import 'package:toykid/screens/cart/cart._screen.dart';
 
 
 class HomeHeader extends StatelessWidget {

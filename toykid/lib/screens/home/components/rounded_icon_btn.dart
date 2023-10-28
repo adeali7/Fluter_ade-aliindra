@@ -17,7 +17,7 @@ class RoundedIconBtn extends StatelessWidget {
       width: 40,
       child: IconButton(
         padding: EdgeInsets.zero,
-        color: Colors.white,
+        color: Colors.black,
         onPressed: press,
         icon: Icon(iconData),
       ),

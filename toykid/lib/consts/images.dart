@@ -14,3 +14,4 @@ const String banner_= "assets/images/banner_truck.png";
 const String banner_3= "assets/images/banner_doll.png";
 const String banner_4= "assets/images/1.png";
 const String banner_5= "assets/images/2.png";
+const String rating = " assets/icons/star.png";

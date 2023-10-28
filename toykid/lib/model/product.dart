@@ -37,7 +37,7 @@ List<Product> demoProducts = [
     ],
     title: "Baby Girl Dolls Can Talk",
     price: 109.000,
-    description: "description",
+    description: "Boneka bayi 100% hasil kerajinan tangan dengan lukisan tangan, vinyl silikon berkualitas tinggi, dan vinyl lembut. ",
     rating: 4.8,
     isFavourite:true,
     isPopular: true,

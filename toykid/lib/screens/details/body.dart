@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:toykid/model/product.dart';
+import 'package:toykid/screens/components/default_button.dart';
+import 'package:toykid/screens/details/color_dots.dart';
+import 'package:toykid/screens/details/product_description.dart';
+import 'package:toykid/screens/details/product_images.dart';
+import 'package:toykid/screens/details/top_rounded_container.dart';
+
 
 class Body extends StatelessWidget {
   final Product product;
@@ -8,71 +14,40 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ProductImages(product: product);
-  }
-}
-
-class ProductImages extends StatefulWidget {
-  const ProductImages({
-    super.key,
-    required this.product,
-  });
-
-  final Product product;
-
-  @override
-  State<ProductImages> createState() => _ProductImagesState();
-}
-
-class _ProductImagesState extends State<ProductImages> {
-  int SelectedImage = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: Image.asset(widget.product.image[0]),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(
-              widget.product.image.length,
-               (index) => buildSmallPreview(index)),
-          ],
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ProductImages(product: product),
+          TopRoundedContainer(
+            color: Colors.white,
+            child: Column(
+              children: [
+                ProductDescription(product: product),
+                TopRoundedContainer(color: Color(0xFFF6F7F9), 
+                child: Column(
+                  children: [
+                    ColorDots(product: product),
+                    TopRoundedContainer(
+                      color: Colors.white, 
+                      child: Padding(
+                        padding:  EdgeInsets.only(
+                          left: 20,
+                          right: 20,
+                          ),
+                        child: DefaultButton(
+                          text:" Add to Cart",
+                          press: () {},
+                                         ),
+                      ))
+                  ],
+                ))
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
+}
 
- GestureDetector buildSmallPreview(int index) {
-  return GestureDetector(
-    onTap: () {
-      // Tambahkan logika untuk menangani pemilihan gambar di sini.
-      // Anda dapat menggunakan setState untuk mengubah nilai SelectedImage.
-      setState(() {
-        SelectedImage = index; // Mengganti gambar yang dipilih
-      });
-    },
-    child: Container(
-      margin: EdgeInsets.only(right: 15),
-      padding: EdgeInsets.all(8),
-      height: 48,
-      width: 48,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: SelectedImage == index ? Colors.transparent : Colors.orange,
-        ),
-      ),
-      child: Image.asset(widget.product.image[index]),
-    ),
-  );
-}
-}
+

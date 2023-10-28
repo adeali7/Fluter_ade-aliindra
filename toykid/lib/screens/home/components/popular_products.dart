@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toykid/model/product.dart';
-import 'package:toykid/screens/home/components/product_card.dart';
 import 'package:toykid/screens/details/details_screen.dart';
+import 'package:toykid/screens/home/components/product_card.dart';
 import 'package:toykid/screens/home/components/section_title.dart'; // Pastikan Anda mengimpor DetailsScreen
 
 class PopularProducts extends StatelessWidget {
@@ -30,7 +30,7 @@ class PopularProducts extends StatelessWidget {
                         Navigator.pushNamed(
                           context,
                           '/detail',
-                          arguments: ProductDetailsArguments(
+                          arguments: ProductDetailIsArguments(
                             product : demoProducts[index]), // Kirim produk sebagai argumen ke DetailsScreen
                         );
                       },
@@ -49,8 +49,3 @@ class PopularProducts extends StatelessWidget {
   }
 }
 
-class ProductDetailsArguments {
-  final Product product;
-
-  ProductDetailsArguments({required this.product});
-}
