@@ -4,6 +4,9 @@ class Cart{
   final Product product;
   final int numOfItem;
 
+
+  var id;
+
   Cart({required this.product, required this.numOfItem});
 }
 

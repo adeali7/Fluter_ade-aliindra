@@ -67,3 +67,24 @@ class CategoryCard extends StatelessWidget {
     );
   }
 }
+
+// Halaman daftar produk dengan kategori yang sesuai
+class ProductListPage extends StatelessWidget {
+  final String category;
+
+  ProductListPage({required this.category});
+
+  @override
+  Widget build(BuildContext context) {
+    // Di sini Anda dapat menampilkan daftar produk yang sesuai dengan kategori.
+    // Gunakan "category" untuk menampilkan produk yang relevan.
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Daftar Produk - $category'),
+      ),
+      body: Center(
+        child: Text('Daftar produk untuk kategori $category'),
+      ),
+    );
+  }
+}

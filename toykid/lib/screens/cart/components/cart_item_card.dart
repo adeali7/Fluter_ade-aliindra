@@ -3,53 +3,61 @@ import 'package:toykid/model/cart.dart';
 
 class CartItemCard extends StatelessWidget {
   const CartItemCard({
-    super.key, 
+    Key? key, // Perbaikan: Ganti super.key dengan key yang benar
     required this.cart,
   });
 
   final Cart cart;
-  
 
   @override
   Widget build(BuildContext context) {
+    print("cart:$cart");
     return Row(
-      children: [
-        SizedBox(
-          width: 88,
-          child: AspectRatio(aspectRatio: 0.88,
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Color(0xFFF5F6F9),
-              borderRadius: BorderRadius.circular(15),
-              ),
-              child:Image.asset(demoCarts[0].product.image[0]) ,
-
-          ), 
+  children: [
+    Expanded(
+      flex: 2, // Atur sesuai kebutuhan
+      child: AspectRatio(
+        aspectRatio: 0.88,
+        child: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Color(0xFFF5F6F9),
+            borderRadius: BorderRadius.circular(15),
           ),
+          child: Image.asset(cart.product.image[0]),
         ),
-        SizedBox(width: 20),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [Text(
-            cart.product.title, 
-            style:TextStyle(
+      ),
+    ),
+    Expanded(
+      flex: 3, // Atur sesuai kebutuhan
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            cart.product.title,
+            style: TextStyle(
               fontSize: 16,
-              color: Colors.black ), 
-              maxLines: 2,
-              ),
-              const SizedBox(height: 10),
-              Text.rich(
+              color: Colors.black,
+            ),
+            maxLines: 2,
+          ),
+          const SizedBox(height: 10),
+          Text.rich(
+            TextSpan(
+              text: "\$${cart.product.price}",
+              style: TextStyle(color: Colors.orange),
+              children: [
                 TextSpan(
-                text: "\$${cart.product.price}",
-              style: TextStyle(
-               color: Colors.orange),
-               children:[TextSpan(text: "x${cart.numOfItem}",
-               style: TextStyle(color: Colors.black),
-               )] ))
+                  text: " x ${cart.numOfItem}",
+                  style: TextStyle(color: Colors.black),
+                ),
               ],
-        )
-      ],
-    );
+            ),
+          ),
+        ],
+      ),
+    ),
+  ],
+);
   }
 }

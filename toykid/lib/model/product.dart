@@ -10,6 +10,8 @@ class Product {
   final bool isFavourite;
   final bool isPopular;
 
+  var id;
+
   Product({
     required this.title,
     required this.description,
