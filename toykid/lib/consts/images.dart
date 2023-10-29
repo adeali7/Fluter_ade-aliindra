@@ -15,3 +15,5 @@ const String banner_3= "assets/images/banner_doll.png";
 const String banner_4= "assets/images/1.png";
 const String banner_5= "assets/images/2.png";
 const String rating = " assets/icons/star.png";
+const String chat= "assets/images/chat.png";
+const String home= "assets/images/home.png";

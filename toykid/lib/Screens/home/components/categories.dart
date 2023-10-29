@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:toykid/model/product.dart';
+import 'package:toykid/screens/details/details_screen.dart';
 
 class Categories extends StatelessWidget {
   const Categories({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons/categories/doll.png", "text": "Doll"},
+      {"icon": "assets/icons/categories/doll.png", "text": "doll"},
       {"icon": "assets/icons/categories/car.png", "text": "Car Fans"},
       {"icon": "assets/icons/categories/puzzle.png", "text": "Puzzle"},
     ];
@@ -20,7 +22,18 @@ class Categories extends StatelessWidget {
               (index) => CategoryCard(
                   icon: categories[index]["icon"],
                   text: categories[index]["text"],
-                  press: () {},
+                  press: () {
+                    // Navigasi ke halaman detail kategori
+                    Navigator.push(
+                    context,
+                     MaterialPageRoute(
+                     builder: (context) => ProductListPage(
+                      category: categories[index]["text"],
+                    ),
+                  ),
+                );
+                    print("categories");
+                  },
                   ),
                 ),
         ],
@@ -76,14 +89,33 @@ class ProductListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Di sini Anda dapat menampilkan daftar produk yang sesuai dengan kategori.
-    // Gunakan "category" untuk menampilkan produk yang relevan.
+    // Filter produk berdasarkan kategori
+    List<Product> productsInCategory = demoProducts.where((product) => product.categories == category).toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Daftar Produk - $category'),
       ),
-      body: Center(
-        child: Text('Daftar produk untuk kategori $category'),
+      body: ListView.builder(
+        itemCount: productsInCategory.length,
+        itemBuilder: (context, index) {
+          Product product = productsInCategory[index];
+          return ListTile(
+            leading: Image.asset(product.image[0]), // Menampilkan gambar produk
+            title: Text(product.title),
+            subtitle: Text(product.description),
+            trailing: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  '/detail', // Mengarahkan ke halaman detail produk
+                  arguments: ProductDetailIsArguments(product: productsInCategory[index]), // Mengirimkan objek produk sebagai argumen
+                );
+              },
+              child: Text('Lihat Detail'),
+            ),
+          );
+        },
       ),
     );
   }

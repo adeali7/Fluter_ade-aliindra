@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toykid/consts/consts.dart';
 import 'package:toykid/model/cart.dart';
+import 'package:toykid/model/product.dart';
 import 'package:toykid/screens/cart/components/body.dart';
 import 'package:toykid/screens/components/default_button.dart';
 
@@ -40,6 +41,11 @@ class CheckOurCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double totalPrice = 0;
+    for (Cart cart in demoCarts) {
+      totalPrice += cart.product.price * cart.numOfItem;
+    }
+
     return Container(
       height: 100,
       decoration: BoxDecoration(
@@ -68,7 +74,7 @@ class CheckOurCard extends StatelessWidget {
                     text : "Total :\n",
                   children: [
                     TextSpan(
-                      text: "\$300.15",
+                      text: "\$$totalPrice", //Tampilkan total harga
                        style: TextStyle(fontSize: 16, color: Colors.black)),
                   ]
                   ),
@@ -76,7 +82,8 @@ class CheckOurCard extends StatelessWidget {
                   SizedBox(
                     width: 190,
                     child: DefaultButton(text: "Check out",
-                     press: () {},
+                     press: () {}
+                     
                      ),
                   )
               ],
