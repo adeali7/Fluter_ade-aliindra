@@ -20,8 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Body(),
+
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(vertical: 5),
+        padding: EdgeInsets.symmetric(vertical: 5),   //mengatur jarak dari batas
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow:[ BoxShadow(

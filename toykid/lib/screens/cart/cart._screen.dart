@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toykid/consts/consts.dart';
 import 'package:toykid/model/cart.dart';
-import 'package:toykid/model/product.dart';
 import 'package:toykid/screens/cart/components/body.dart';
 import 'package:toykid/screens/components/default_button.dart';
 

@@ -12,7 +12,7 @@ class Categories extends StatelessWidget {
       {"icon": "assets/icons/categories/puzzle.png", "text": "Puzzle"},
     ];
     return Padding(
-      padding:EdgeInsets.symmetric (horizontal:10),
+      padding:const EdgeInsets.symmetric (horizontal:10),
       child: Row(
         mainAxisAlignment:MainAxisAlignment.spaceBetween ,
         crossAxisAlignment:CrossAxisAlignment.start,
