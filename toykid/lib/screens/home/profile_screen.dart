@@ -1,26 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:toykid/Screens/home/components/body.dart';
+import 'package:provider/provider.dart';
+import 'package:toykid/provider/user_profile_model.dart';
+import 'package:toykid/screens/home/login_screen.dart';
 
-
-import 'package:toykid/consts/consts.dart';
-
-
-class HomeScreen extends StatefulWidget {
-  static const String routeName = '/home';
-   
-  const HomeScreen
-({Key? key}) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Body(),
+    final userProvider = Provider.of<UserProvider>(context);
 
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profil Pengguna'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Selamat datang, ${userProvider.username}!'), // Menampilkan nama pengguna
+            Text('Email: ${userProvider.email}'), // Menampilkan email pengguna
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+              child: Text('Login'),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(vertical: 5),   //mengatur jarak dari batas
         decoration: BoxDecoration(
@@ -33,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ]
         ),
         child: SafeArea(
-  child: Row(
+    child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       IconButton(
@@ -65,4 +74,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
