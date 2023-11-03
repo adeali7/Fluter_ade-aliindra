@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toykid/model/user_profile_model.dart';
-import 'package:toykid/screens/Profile_screen/profile_screen.dart';
+import 'package:toykid/screens/home/home_screen.dart';
 
 
 
@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
               if (formKey.currentState!.validate()) {
                     // Validasi berhasil, lakukan login
                     userProvider.login(nameController.text, emailController.text, passwordController.text);
-                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => ProfileScreen(),
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen(),
                     // Lanjutkan ke halaman beranda atau tindakan sesuai dengan login yang berhasil
             ),
             (Route) => false);
