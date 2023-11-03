@@ -1,6 +1,6 @@
 import 'package:toykid/Screens/home/home_screen.dart';
 import 'package:toykid/consts/consts.dart';
-import 'package:toykid/widget_common/applogo_widget.dart';
+import 'package:toykid/screens/splash_screen/applogo_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String routeName = '/splash';

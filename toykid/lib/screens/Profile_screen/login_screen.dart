@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:toykid/provider/user_profile_model.dart';
-import 'package:toykid/screens/home/profile_screen.dart';
+import 'package:toykid/model/user_profile_model.dart';
+import 'package:toykid/screens/Profile_screen/profile_screen.dart';
+
 
 
 

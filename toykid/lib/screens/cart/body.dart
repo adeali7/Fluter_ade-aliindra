@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toykid/model/cart.dart';
-import 'package:toykid/screens/cart/components/cart_item_card.dart';
+import 'package:toykid/screens/cart/cart_item_card.dart';
 
 class BodyCart extends StatefulWidget {
   @override

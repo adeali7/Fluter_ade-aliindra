@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toykid/Screens/home/components/body.dart';
+import 'package:toykid/Screens/home/body.dart';
 
 
 import 'package:toykid/consts/consts.dart';

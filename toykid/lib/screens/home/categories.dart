@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toykid/model/product.dart';
-import 'package:toykid/screens/details/details_screen.dart';
+import 'package:toykid/screens/details_product/details_screen.dart';
 
 class Categories extends StatelessWidget {
   const Categories({Key? key}) : super(key: key);
