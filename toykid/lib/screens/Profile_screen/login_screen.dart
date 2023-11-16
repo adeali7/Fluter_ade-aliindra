@@ -65,17 +65,42 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 20,
             ),
 
-            ElevatedButton(onPressed: (){
-              if (formKey.currentState!.validate()) {
-                    // Validasi berhasil, lakukan login
-                    userProvider.login(nameController.text, emailController.text, passwordController.text);
-                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen(),
-                    // Lanjutkan ke halaman beranda atau tindakan sesuai dengan login yang berhasil
+            ElevatedButton(
+  onPressed: () {
+    if (formKey.currentState!.validate()) {
+      // Validasi berhasil
+      if (!emailController.text.contains('@gmail.com')) {
+        // Alamat email tidak mengandung '@gmail.com', tampilkan alert
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Peringatan'),
+              content: Text('Alamat email harus menggunakan @gmail.com'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        // Alamat email valid, lakukan login
+        userProvider.login(nameController.text, emailController.text, passwordController.text);
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+          (Route) => false,
+        );
+      }
+    }
+  },
+  child: Text('Login'),
             ),
-            (Route) => false);
-            }
-            }, child: Text('Login'),
-          ),
           ],
         ), 
         ),
